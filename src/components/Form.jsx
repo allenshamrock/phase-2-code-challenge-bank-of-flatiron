@@ -26,14 +26,14 @@ function Form() {
         type="date"
         placeholder="Input date"
         required
-        className="p-2 border rounded-md border-slate-400"
+        className="px-2 border rounded-md border-slate-400"
         value={formData.date}
         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
       />
       <input
         type="text"
         placeholder="Input description"
-        className="p-2 border rounded-md border-slate-400"
+        className="px-2 border rounded-md border-slate-400"
         value={formData.description}
         onChange={(e) =>
           setFormData({ ...formData, description: e.target.value })
@@ -42,18 +42,18 @@ function Form() {
       <input
         type="text"
         placeholder="Input category"
-        className="p-2 border rounded-md border-slate-400"
+        className="px-2 border rounded-md border-slate-400"
         value={formData.category}
         onChange={(e) => setFormData({ ...formData, category: e.target.value })}
       />
       <input
         type="text"
         placeholder="input amount"
-        className="p-2 border rounded-md border-slate-400"
+        className="px-2 border rounded-md border-slate-400"
         value={formData.amount}
         onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
       />
-      <button className=" border-slate-500 w-10 bg-red-300" >Submit</button>
+      <button className=" border-none w-[100px] bg-red-300 rounded-xl p-1" >Submit</button>
     </form>
   );
 }
