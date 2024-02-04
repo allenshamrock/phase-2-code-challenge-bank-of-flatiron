@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
 function Form({ handleTransaction }) {
+    const randomId = Math.floor(Math.random()*20) //Random id between 0-20
+
   const [formData, setFormData] = useState({
-    id: "",
+    id: randomId,
     date: "",
     description: "",
     category: "",
@@ -13,7 +15,7 @@ function Form({ handleTransaction }) {
     e.preventDefault();
     handleTransaction(formData);
     setFormData({
-      id: "",
+      id: randomId,
       date: "",
       description: "",
       category: "",
