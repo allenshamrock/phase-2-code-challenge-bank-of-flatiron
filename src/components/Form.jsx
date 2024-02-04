@@ -41,6 +41,7 @@ function Form({ handleTransaction }) {
         onChange={(e) =>
           setFormData({ ...formData, description: e.target.value })
         }
+        required
       />
       <input
         type="text"
@@ -55,6 +56,7 @@ function Form({ handleTransaction }) {
         className="px-2 border rounded-md border-slate-400"
         value={formData.amount}
         onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
+        required
       />
       <button className=" border-none w-[100px] bg-red-300 rounded-xl p-1">
         Submit
