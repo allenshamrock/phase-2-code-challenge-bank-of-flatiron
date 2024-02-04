@@ -1,8 +1,23 @@
-# React + Vite
+Project Title
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BANK OF FLATIRON
 
-Currently, two official plugins are available:
+About the App 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+THis is an hypothetical bank application that enable a user to input transactions and filter out the transactions based on the category of the users input.
+
+Technologies
+
+I used ReactJS +  Vite and Tailwindcss
+
+Set Up
+Download or clone rhe repository
+run npm install
+start npm run dev
+
+Credits
+Github:https://github.com/allenshamrock
+
+
+
+
