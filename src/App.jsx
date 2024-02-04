@@ -26,6 +26,7 @@ function App() {
     console.log(formdata, "in App");
     const updatedData = [...data, formdata];
     setData(updatedData);
+    setFilteredTransaction(updatedData)
     console.log(updatedData, "in App");
   }
 

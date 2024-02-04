@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form({handleTransaction}) {
+function Form({ handleTransaction }) {
   const [formData, setFormData] = useState({
     id: "",
     date: "",
@@ -11,7 +11,7 @@ function Form({handleTransaction}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleTransaction(formData)
+    handleTransaction(formData);
     setFormData({
       id: "",
       date: "",
@@ -20,7 +20,7 @@ function Form({handleTransaction}) {
       amount: "",
     });
   }
-  
+
   return (
     <form action="" onSubmit={handleSubmit} className="flex mt-10 gap-x-6 ">
       <input
@@ -54,7 +54,9 @@ function Form({handleTransaction}) {
         value={formData.amount}
         onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
       />
-      <button className=" border-none w-[100px] bg-red-300 rounded-xl p-1" >Submit</button>
+      <button className=" border-none w-[100px] bg-red-300 rounded-xl p-1">
+        Submit
+      </button>
     </form>
   );
 }
