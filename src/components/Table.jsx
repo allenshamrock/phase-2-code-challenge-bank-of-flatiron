@@ -1,34 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-function Table() {
-  const [data, setData] = useState([]); //State for storing our data
+function Table({data}) {
 
-  //Using side effect to fetch data from my db
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("  http://localhost:3001/transactions");
-        const data = await response.json();
-        console.log(data);
-        setData(data);
-      } catch (error) {
-        console.error("Failed to fetch", error.message);
-      }
-    };
-    fetchData();
-  }, []);
   return (
-    <div className="bg-red-500">
+    <div className="flex flex-col justify-center m-auto mt-10 w-[812px] border-2 border-slate-700 p-2 rounded">
       {data.map((data) => {
         return (
-          <div key={data.id}>
-            <p>{data.id}</p>
-            <p>{data.date}</p>
-            <p>{data.description}</p>
-            <p>{data.category}</p>
-            <p>
-              <strong>{data.amount}</strong>
-            </p>
+          <div key={data.id} className="flex py-2 border-b-2 border-slate-700 not-last-child:border-b-0 gap-x-8 gap-y-4">
+            <p className="w-[20px]">{data.id}</p>
+            <p className="w-[90px]">{data.date}</p>
+            <p className="w-[400px]">{data.description}</p>
+            <p className="w-[100px]">{data.category}</p>
+            <p className="w-[100px] font-bold text-end">{data.amount}</p>
           </div>
         );
       })}
