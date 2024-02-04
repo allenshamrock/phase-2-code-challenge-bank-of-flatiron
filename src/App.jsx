@@ -4,6 +4,8 @@ import SearchBar from "./components/SearchBar";
 import Form from "./components/Form";
 function App() {
   const [data, setData] = useState([]); //State for storing our data
+  const [filteredTransaction, setFilteredTransaction] = useState([]);
+
   //Using side effect to fetch data from my db
   useEffect(() => {
     const fetchData = async () => {
@@ -12,6 +14,7 @@ function App() {
         const data = await response.json();
         console.log(data);
         setData(data);
+        setFilteredTransaction(data);
       } catch (error) {
         console.error("Failed to fetch", error.message);
       }
@@ -21,15 +24,25 @@ function App() {
 
   function handleTransaction(formdata) {
     console.log(formdata, "in App");
-    const updatedData = [...data, formdata];    
-    setData(updatedData)
+    const updatedData = [...data, formdata];
+    setData(updatedData);
     console.log(updatedData, "in App");
+  }
+
+  function handleFilter(category) {
+    const updatedData =
+      category === ""
+        ? data
+        : data.filter((data) => {
+            return data.category.toLowerCase().includes(category.toLowerCase());
+          });
+    setFilteredTransaction(updatedData);
   }
   return (
     <div className="flex flex-col items-center">
-      <SearchBar />
+      <SearchBar handleFilter={handleFilter} />
       <Form handleTransaction={handleTransaction} />
-      <Table data={data} />
+      <Table data={filteredTransaction} />
     </div>
   );
 }
