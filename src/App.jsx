@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("  http://localhost:3001/transactions");
+        const response = await fetch("  http://localhost:3000/transactions");
         const data = await response.json();
         console.log(data);
         setData(data);

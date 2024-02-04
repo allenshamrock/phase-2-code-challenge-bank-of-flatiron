@@ -58,8 +58,8 @@ function Form({ handleTransaction }) {
         onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
         required
       />
-      <button className=" border-none w-[100px] bg-red-300 rounded-xl p-1">
-        Submit
+      <button className=" border-none w-[200px] bg-red-300 rounded-xl p-2">
+        Add Transaction
       </button>
     </form>
   );
